@@ -1,5 +1,7 @@
 package core.basesyntax;
 
+import java.util.Arrays;
+
 public class FindNumbers {
 
     /**
@@ -11,6 +13,10 @@ public class FindNumbers {
      * числа 92, 18, 26 и 0.</p>
      */
     public int[] getAllNumbers(String text) {
-        return null;
+        text = text.replaceAll("[^\\d-]+", " ").trim();
+        return Arrays.stream(text.split(" "))
+                .mapToInt(Integer::valueOf)
+                .map(i -> i * 2)
+                .toArray();
     }
 }
