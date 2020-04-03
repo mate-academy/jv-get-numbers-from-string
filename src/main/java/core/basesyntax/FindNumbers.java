@@ -14,10 +14,9 @@ public class FindNumbers {
      */
     public int[] getAllNumbers(String text) {
         return Arrays.stream(text
-                .replaceAll("[^0-9 -]", " ")
-                .replaceAll("[\\s]+", " ")
+                .replaceAll("[^0-9 -]+", " ")
                 .trim()
-                .split(" "))
+                .split("[\\s]+"))
                 .mapToInt(s -> Integer.parseInt(s) * 2)
                 .toArray();
     }
