@@ -11,18 +11,10 @@ public class FindNumbers {
      * числа 92, 18, 26 и 0.</p>
      */
     public int[] getAllNumbers(String text) {
-        StringBuilder nums = new StringBuilder();
-        String[] objects = text.split(" ");
-        for (String object: objects) {
-            String[] checkNums = object.split("[^\\d-]+");
-            for (String i: checkNums) {
-                nums.append(i).append(" ");
-            }
-        }
-        String[] numbers = nums.toString().replaceAll("(^\\s+|\\s+$)", "").split("\\s+");
-        int[] result = new int[numbers.length];
-        for (int i = 0; i < numbers.length; i++) {
-            result[i] = Integer.parseInt(numbers[i]) * 2;
+        String[] objects = text.replaceAll("[^\\d-]+", " ").replaceAll("(^\\s+|\\s+$)", "").split(" ");
+        int[] result = new int[objects.length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = Integer.parseInt(objects[i]) * 2;
         }
         return result;
     }
