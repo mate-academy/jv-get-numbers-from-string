@@ -16,12 +16,10 @@ public class FindNumbers {
         for (String object: objects) {
             String[] checkNums = object.split("[^\\d-]+");
             for (String i: checkNums) {
-                if (!i.isEmpty()) {
-                    nums.append(i).append(" ");
-                }
+                nums.append(i).append(" ");
             }
         }
-        String[] numbers = nums.toString().split(" ");
+        String[] numbers = nums.toString().replaceAll("(^\\s+|\\s+$)", "").split("\\s+");
         int[] result = new int[numbers.length];
         for (int i = 0; i < numbers.length; i++) {
             result[i] = Integer.parseInt(numbers[i]) * 2;
