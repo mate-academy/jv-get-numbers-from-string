@@ -1,5 +1,8 @@
 package core.basesyntax;
 
+import java.util.regex.MatchResult;
+import java.util.regex.Pattern;
+
 public class FindNumbers {
 
     /**
@@ -10,7 +13,9 @@ public class FindNumbers {
      * <p>Пример: если дана строка "data 48 call 9 read13 blank0a", то в массиве должны оказаться
      * числа 92, 18, 26 и 0.</p>
      */
-    public int[] getAllNumbers(String text) {
-        return null;
+    public static int[] getAllNumbers(String text) {
+        return Pattern.compile("-?\\d\\d*")
+                .matcher(text).results().map(MatchResult::group)
+                .mapToInt(i -> 2 * Integer.parseInt(i)).toArray();
     }
 }
