@@ -13,8 +13,11 @@ public class FindNumbers {
      * числа 92, 18, 26 и 0.</p>
      */
     public int[] getAllNumbers(String text) {
-        return Arrays.stream(text.replaceAll("[^0-9 -]", " ").split(" "))
-                .filter(s -> !s.isEmpty())
+        return Arrays.stream(text
+                .replaceAll("[^0-9 -]", " ")
+                .replaceAll("[\\s]+", " ")
+                .trim()
+                .split(" "))
                 .mapToInt(s -> Integer.parseInt(s) * 2)
                 .toArray();
     }
