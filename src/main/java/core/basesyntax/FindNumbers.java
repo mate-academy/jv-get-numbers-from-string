@@ -11,6 +11,12 @@ public class FindNumbers {
      * числа 92, 18, 26 и 0.</p>
      */
     public int[] getAllNumbers(String text) {
-        return null;
+        text = text.replaceAll("[^0-9-]", " ").trim();
+        String[] numbers = text.split("\\s+");
+        int[] listNumbers = new int[numbers.length];
+        for (int i = 0; i < numbers.length; i++) {
+            listNumbers[i] = Integer.parseInt(numbers[i]) * 2;
+        }
+        return listNumbers;
     }
 }
