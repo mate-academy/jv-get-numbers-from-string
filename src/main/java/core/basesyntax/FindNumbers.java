@@ -10,7 +10,19 @@ public class FindNumbers {
      * <p>Пример: если дана строка "data 48 call 9 read13 blank0a", то в массиве должны оказаться
      * числа 92, 18, 26 и 0.</p>
      */
+
+    private static final String REGEX = "[^\\-\\d]+";
+
     public int[] getAllNumbers(String text) {
-        return null;
+        String replaced = text.replaceAll(REGEX, "_");
+        if (replaced.charAt(0) == '_') {
+            replaced = replaced.substring(1);
+        }
+        String[] answerString = replaced.split("_");
+        int[] answer = new int[answerString.length];
+        for (int i = 0; i < answer.length; i++) {
+            answer[i] = Integer.parseInt(answerString[i]) * 2;
+        }
+        return answer;
     }
 }
