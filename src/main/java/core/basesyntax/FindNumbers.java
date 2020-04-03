@@ -1,7 +1,5 @@
 package core.basesyntax;
 
-import java.util.ArrayList;
-
 public class FindNumbers {
 
     /**
@@ -18,7 +16,7 @@ public class FindNumbers {
         int[] result = new int[digit.length];
         for (int i = 0; i < digit.length; i++) {
             result[i] = Integer.parseInt(digit[i]) * 2;
-            }
+        }
         return result;
     }
 }
