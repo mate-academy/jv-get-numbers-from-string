@@ -8,9 +8,7 @@ public class FindNumbers {
                 .split("[\\s]+");
         int[] numbers = new int[strOfNumbers.length];
         for (int i = 0; i < strOfNumbers.length; i++) {
-            if (!strOfNumbers[i].equals("")) {
-                numbers[i] = Integer.parseInt(strOfNumbers[i]) * 2;
-            }
+            numbers[i] = Integer.parseInt(strOfNumbers[i]) * 2;
         }
         return numbers;
     }
