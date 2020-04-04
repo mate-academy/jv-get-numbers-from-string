@@ -1,5 +1,7 @@
 package core.basesyntax;
 
+import java.util.Arrays;
+
 public class FindNumbers {
 
     /**
@@ -10,7 +12,10 @@ public class FindNumbers {
      * <p>Пример: если дана строка "data 48 call 9 read13 blank0a", то в массиве должны оказаться
      * числа 92, 18, 26 и 0.</p>
      */
+
     public int[] getAllNumbers(String text) {
-        return null;
+        return Arrays.stream(text.replaceAll("[^0-9-]+"," ").trim().split(" "))
+                .mapToInt(number -> Integer.parseInt(number) * 2)
+                .toArray();
     }
 }
