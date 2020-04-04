@@ -1,7 +1,6 @@
 package core.basesyntax;
 
 public class FindNumbers {
-
     /**
      * <p>Реализуйте метод getAllNumbers(String text) который принимает строку, cодержащую буквы,
      * целые числа и иные символы.</p>
@@ -11,6 +10,21 @@ public class FindNumbers {
      * числа 92, 18, 26 и 0.</p>
      */
     public int[] getAllNumbers(String text) {
-        return null;
+        String[] temp = text.replaceAll("[^ 0-9-]", " ").split(" ");
+        int count = 0;
+        for (int i = 0; i < temp.length; i++) {
+            if (!temp[i].equals("") && !temp[i].equals(" ")) {
+                count++;
+            }
+        }
+        int[] fin = new int[count];
+        int ind = 0;
+        for (String s : temp) {
+            if (!s.equals("") && !s.equals(" ")) {
+                fin[ind] = Integer.parseInt(s) * 2;
+                ind++;
+            }
+        }
+        return fin;
     }
 }
