@@ -1,18 +1,18 @@
 package core.basesyntax;
 
-import java.util.Arrays;
-
 public class FindNumbers {
 
     public int[] getAllNumbers(String text) {
-        String str = text.replaceAll("[^0-9]", " ").replaceAll("\\s+"," ");
+        String str = text.replaceAll("[^-?\\d+$]", " ").trim();
+        String[] resStrings = str.split("\\s+");
+        int[] result = new int[resStrings.length];
 
-        int[] result = Arrays.stream(str.split(""))
-                .mapToInt(Integer::valueOf)
-                .toArray();
+        for (int i = 0; i < resStrings.length; i++) {
+            result[i] = Integer.parseInt(resStrings[i]);
+        }
 
         for (int i = 0; i < result.length; i++) {
-            result[i] *= result[i];
+            result[i] *= 2;
         }
 
         return result;
