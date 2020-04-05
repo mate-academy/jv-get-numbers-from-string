@@ -12,12 +12,12 @@ public class FindNumbers {
      */
     public int[] getAllNumbers(String text) {
 
-        String[] onlydigits = text.replaceAll("[^0-9\\-]+", " ").trim().split("\\s+");
+        String[] onlyDigits = text.replaceAll("[^0-9\\-]+", " ").trim().split("\\s+");
 
-        int[] results = new int[onlydigits.length];
+        int[] results = new int[onlyDigits.length];
 
-        for (int i = 0; i < onlydigits.length; i++) {
-            results[i] = Integer.parseInt(onlydigits[i]) * 2;
+        for (int i = 0; i < onlyDigits.length; i++) {
+            results[i] = Integer.parseInt(onlyDigits[i]) * 2;
         }
         return results;
     }
