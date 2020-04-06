@@ -13,13 +13,13 @@ public class FindNumbers {
      * <p>Пример: если дана строка "data 48 call 9 read13 blank0a", то в массиве должны оказаться
      * числа 92, 18, 26 и 0.</p>
      */
-    public int[] getAllNumbers(String text) {
+    int[] getAllNumbers(String text) {
         String s = text.replaceAll("[^0-9*?:.+\\-^\"_ ]", " ").replaceAll(" +\\s", " ");
         s = s.replaceAll("^\\s*", "");
         String[] words = s.split(" ");
         List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < words.length; i++) {
-                list.add(Integer.parseInt(words[i]) * 2);
+        for (String word : words) {
+            list.add(Integer.parseInt(word) * 2);
         }
         return list.stream().mapToInt(i -> i).toArray();
     }
