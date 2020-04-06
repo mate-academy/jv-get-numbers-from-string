@@ -1,8 +1,5 @@
 package core.basesyntax;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class FindNumbers {
 
     /**
@@ -14,13 +11,7 @@ public class FindNumbers {
      * числа 92, 18, 26 и 0.</p>
      */
     public int[] getAllNumbers(String text) {
-        Pattern pattern = Pattern.compile("-?\\d+");
-        Matcher matcher = pattern.matcher(text);
-        String stringNumbers = "";
-        while (matcher.find()) {
-            stringNumbers += matcher.group() + " ";
-        }
-        String[] strArr = stringNumbers.split(" ");
+        String[] strArr = text.replaceAll("[^-0-9]+"," ").trim().split(" ");
         int[] arrayNumbers = new int[strArr.length];
         for (int i = 0; i < strArr.length; i++) {
             arrayNumbers[i] = Integer.parseInt(strArr[i]) * 2;
