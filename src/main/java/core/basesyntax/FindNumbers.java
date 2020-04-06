@@ -1,8 +1,5 @@
 package core.basesyntax;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class FindNumbers {
 
     /**
@@ -17,7 +14,7 @@ public class FindNumbers {
         String[] textResult = text.replaceAll("[^-0-9]+", " ").trim().split(" ");
         int[] arr = new int[textResult.length];
 
-        for(int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             arr[i] = Integer.parseInt(textResult[i]) * 2;
         }
         return arr;
