@@ -13,11 +13,11 @@ public class FindNumbers {
     public int[] getAllNumbers(String text) {
 
         String splittedText = text.replaceAll("[^-0-9]", " ").trim();
-        String[] arr = splittedText.split("\\s+");
+        String[] numbers = splittedText.split("\\s+");
 
-        int[] result = new int[arr.length];
+        int[] result = new int[numbers.length];
         for (int i = 0; i < result.length; i++) {
-            result[i] = Integer.parseInt(arr[i]) * 2;
+            result[i] = Integer.parseInt(numbers[i]) * 2;
         }
         return result;
     }
