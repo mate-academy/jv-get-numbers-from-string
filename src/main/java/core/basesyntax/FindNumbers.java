@@ -1,20 +1,17 @@
 package core.basesyntax;
 
+import java.util.stream.Stream;
+
 public class FindNumbers {
 
     public int[] getAllNumbers(String text) {
-        String str = text.replaceAll("[^-?\\d+$]", " ").trim();
-        String[] resStrings = str.split("\\s+");
-        int[] result = new int[resStrings.length];
-
-        for (int i = 0; i < resStrings.length; i++) {
-            result[i] = Integer.parseInt(resStrings[i]);
+        String textNums = text.replaceAll("[^-?\\d+$]", " ").trim();
+        int [] stringToInt = Stream.of(textNums.split("\\s+"))
+                .mapToInt(Integer::parseInt)
+                .toArray();
+        for (int i = 0; i < stringToInt.length; i++) {
+            stringToInt[i] *= 2;
         }
-
-        for (int i = 0; i < result.length; i++) {
-            result[i] *= 2;
-        }
-
-        return result;
+        return stringToInt;
     }
 }
