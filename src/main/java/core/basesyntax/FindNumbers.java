@@ -1,7 +1,5 @@
 package core.basesyntax;
 
-import java.util.Arrays;
-
 public class FindNumbers {
 
     /**
@@ -14,10 +12,11 @@ public class FindNumbers {
      */
     public int[] getAllNumbers(String text) {
 
-        return Arrays.stream(text.replaceAll("[^-0-9]", " ").split(" "))
-                .filter(s -> !s.equals(""))
-                .mapToInt(Integer::parseInt)
-                .map(s -> s * 2)
-                .toArray();
+        String[] stringOnlyNum = text.replaceAll("[^0-9\\s-]", " ").trim().split("\\s+");
+        int[] intOnlyNum = new int[stringOnlyNum.length];
+        for (int i = 0; i < stringOnlyNum.length; i++) {
+            intOnlyNum[i] = Integer.parseInt(stringOnlyNum[i]) * 2;
+        }
+        return intOnlyNum;
     }
 }
