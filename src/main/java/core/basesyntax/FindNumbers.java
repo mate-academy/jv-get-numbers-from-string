@@ -19,5 +19,4 @@ public class FindNumbers {
         }
         return result;
     }
-
 }
