@@ -15,7 +15,7 @@ public class FindNumbers {
     public int[] getAllNumbers(String text) {
         String[] textWithoutLetters = text.replaceAll("[^-\\d. ]"," ").split(" ");
         ArrayList<Integer> answerList = new ArrayList<>();
-        for (String textNumber :textWithoutLetters) {
+        for (String textNumber : textWithoutLetters) {
             if (textNumber.isEmpty()) {
                 continue;
             }
