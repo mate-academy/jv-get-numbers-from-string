@@ -14,16 +14,13 @@ public class FindNumbers {
      */
     public int[] getAllNumbers(String text) {
         ArrayList<Integer> arrayList = new ArrayList<>();
-        String[] words = text.split(" ");
+        String[] words = text.replaceAll("[^0-9 + -]+", " ").split(" ");
         for (int i = 0; i < words.length; i++) {
-            words[i] = words[i].replaceAll("[^0-9 + -]+", " ").trim();
+            words[i] = words[i];
             if (words[i].isEmpty()) {
                 continue;
             }
-            String[] intermediateDigits = words[i].split(" ");
-            for (int j = 0; j < intermediateDigits.length; j++) {
-                arrayList.add(Integer.parseInt(intermediateDigits[j]) * 2);
-            }
+            arrayList.add(Integer.parseInt(words[i]) * 2);
         }
         int[] arrayWithNumbers = new int[arrayList.size()];
         for (int i = 0; i < arrayWithNumbers.length; i++) {
