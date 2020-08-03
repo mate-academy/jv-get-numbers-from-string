@@ -16,7 +16,7 @@ public class FindNumbers {
         return Arrays.stream(text
                 .replaceAll("[^-\\d]", " ")
                 .split("\\s+"))
-                .filter(number->!number.isEmpty())
+                .filter(number -> !number.isEmpty())
                 .mapToInt(Integer::parseInt)
                 .map(number -> number * 2)
                 .toArray();
