@@ -1,7 +1,5 @@
 package core.basesyntax;
 
-import java.util.ArrayList;
-
 public class FindNumbers {
 
     /**
@@ -13,16 +11,12 @@ public class FindNumbers {
      * числа 92, 18, 26 и 0.</p>
      */
     public int[] getAllNumbers(String text) {
-        String[] resultString = text.replaceAll("[^0-9-]", ":").split(":");
-        ArrayList<Integer> numberList = new ArrayList<>();
+        String[] resultString = text.replaceAll("[^0-9-]", " ").trim().split("\\s+");
+        int[] resultArray = new int[resultString.length];
         for (int i = 0; i < resultString.length; i++) {
             if (resultString[i].length() > 0) {
-                numberList.add(Integer.parseInt(resultString[i]) * 2);
+                resultArray[i] = (Integer.parseInt(resultString[i]) * 2);
             }
-        }
-        int[] resultArray = new int[numberList.size()];
-        for (int i = 0; i < resultArray.length; i++) {
-            resultArray[i] = numberList.get(i);
         }
         return resultArray;
     }
