@@ -12,8 +12,7 @@ public class FindNumbers {
      */
 
     public int[] getAllNumbers(String text) {
-        text = text.replaceAll("[^-?0-9]+", " ");
-        String[] numbersAndMinus = text.trim().split(" ");
+        String[] numbersAndMinus = text.replaceAll("[^-?0-9]+", " ").trim().split(" ");
         int[] resultNum = new int[numbersAndMinus.length];
         for (int i = 0; i < numbersAndMinus.length; i++) {
             resultNum[i] = (Integer.valueOf(numbersAndMinus[i])) * 2;
