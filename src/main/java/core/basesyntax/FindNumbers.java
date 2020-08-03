@@ -1,5 +1,7 @@
 package core.basesyntax;
 
+import java.util.stream.Stream;
+
 public class FindNumbers {
 
     /**
@@ -11,6 +13,11 @@ public class FindNumbers {
      * числа 92, 18, 26 и 0.</p>
      */
     public int[] getAllNumbers(String text) {
-        return null;
+        return Stream.of(text
+                .replaceAll("[^\\-0-9]", "\t")
+                .trim()
+                .split("\\s+"))
+                    .mapToInt(x -> Integer.parseInt(x) * 2)
+                    .toArray();
     }
 }
