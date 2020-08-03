@@ -7,3 +7,8 @@
 
 Пример: если дана строка "data 48 call 9 read13 blank0a", то в массиве должны оказаться
 числа 92, 18, 26 и 0.
+
+
+Чеклист:
+Don’t create unnecessary variables. 
+Let’s use method replaceAll() with regular expression, and method split() in this task.
