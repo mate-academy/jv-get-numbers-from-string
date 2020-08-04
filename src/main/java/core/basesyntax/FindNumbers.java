@@ -14,13 +14,14 @@ public class FindNumbers {
      * числа 92, 18, 26 и 0.</p>
      */
     public int[] getAllNumbers(String text) {
-        String[] numbersString = text.split("([^-0-9]+)");
+        String[] numbersString = text.replaceAll("[^-0-9]+", " ")
+                .trim()
+                .split(" ");
+        int[] result = new int[numbersString.length];
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < numbersString.length; i++) {
-            if (!numbersString[i].equals("")) {
-                list.add(Integer.parseInt(numbersString[i]) * 2);
-            }
+            result[i] = Integer.parseInt(numbersString[i]) * 2;
         }
-        return list.stream().mapToInt(Integer::intValue).toArray();
+        return result;
     }
 }
