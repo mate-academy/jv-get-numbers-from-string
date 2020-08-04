@@ -15,11 +15,8 @@ public class FindNumbers {
                 .trim().split(" ");
 
         int[] result = new int[temp.length];
-        int counter = 0;
-        for (String s : temp) {
-            if (!s.equals("")) {
-                result[counter++] = Integer.parseInt(s) * 2;
-            }
+        for (int i = 0; i < result.length; i++) {
+            result[i] = Integer.parseInt(temp[i]) * 2;
         }
 
         return result;
