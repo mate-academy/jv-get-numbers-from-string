@@ -22,10 +22,6 @@ public class FindNumbers {
             }
             arrayList.add(Integer.parseInt(words[i]) * 2);
         }
-        int[] arrayWithNumbers = new int[arrayList.size()];
-        for (int i = 0; i < arrayWithNumbers.length; i++) {
-            arrayWithNumbers[i] = arrayList.get(i);
-        }
-        return arrayWithNumbers;
+        return arrayList.stream().mapToInt(i -> i).toArray();
     }
 }
