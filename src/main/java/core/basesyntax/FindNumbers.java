@@ -1,7 +1,5 @@
 package core.basesyntax;
 
-import java.util.stream.Stream;
-
 public class FindNumbers {
 
     /**
