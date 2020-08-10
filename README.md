@@ -1,9 +1,8 @@
 # jv-get-numbers-from-string
-Реализуйте метод getAllNumbers(String text) который принимает строку, cодержащую буквы,
-целые числа и иные символы.
 
-Требуется: все числа, которые встречаются в строке, поместить в отдельный целочисленный
-массив, каждый элемент этого массива умножить на 2. Метод должен возвращать этот массив.
+Implement method `getAllNumbers(String text` which accepts a String containing letters, digits and other symbols.
 
-Пример: если дана строка "data 48 call 9 read13 blank0a", то в массиве должны оказаться
-числа 92, 18, 26 и 0.
+You need to put all digits that this String contains, to a separate array, 
+then multiply each element of that array by 2, and return the result array.
+
+Example: for a String `"data 48 call 9 read13 blank0a"`, you should return `[96, 18, 26, 0]`.
